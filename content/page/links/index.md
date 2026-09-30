@@ -5,9 +5,14 @@ links:
     description: GitHub is the world's largest software development platform.
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+
+  - title: Goldberries
+    description: Ma page goldberries
+    website: https://goldberries.net/player/2436
+    image: fightcade.jpg
 menu:
     main: 
-        weight: 4
+        weight: 3
         params:
             icon: link
 
