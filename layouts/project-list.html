@@ -1,0 +1,43 @@
+{{ define "main" }}
+{{ $category := .Params.target_category }}
+{{ $posts := where (where site.RegularPages "Section" "post") "Params.categories" "intersect" (slice $category) }}
+{{ $hero := false }}
+{{ with .Params.image }}
+	{{ $hero = $.Resources.GetMatch . }}
+{{ end }}
+
+<article class="main-article">
+	<header class="article-header{{ with $hero }} project-hero{{ end }}"{{ with $hero }} style="--project-hero-image: url('{{ .RelPermalink }}')"{{ end }}>
+		<div class="article-details">
+			<div class="article-title-wrapper">
+				<h2 class="article-title">{{ .Title }}</h2>
+			</div>
+		</div>
+	</header>
+</article>
+
+<div class="article-list--compact">
+	{{ range sort $posts "Date" "desc" }}
+		<article>
+			<a href="{{ .RelPermalink }}">
+				<div class="article-details">
+					<h2 class="article-title">{{ .Title }}</h2>
+					<footer class="article-meta">{{ .Date.Format "January 2, 2006" }}</footer>
+				</div>
+				{{ $post := . }}
+				{{ with $post.Params.image }}
+					<div class="article-image">
+						{{ with $post.Resources.GetMatch . }}
+							<img src="{{ .RelPermalink }}" alt="{{ $post.Title }}" width="60" height="60" loading="lazy">
+						{{ else }}
+							<img src="{{ . | relURL }}" alt="{{ $post.Title }}" width="60" height="60" loading="lazy">
+						{{ end }}
+					</div>
+				{{ end }}
+			</a>
+		</article>
+	{{ else }}
+		<p>No projects found in the {{ $category }} category yet.</p>
+	{{ end }}
+</div>
+{{ end }}

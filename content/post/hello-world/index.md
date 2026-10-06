@@ -1,13 +1,13 @@
 ---
 title: Hello World
-description: Welcome to Hugo Theme Stack
+description: My first post
 slug: hello-world
 date: 2026-09-29
 image: MarcelineDisgust.png
 categories:
-    - Example Category
+    - Projects
 tags:
-    - Example Tag
+    - Hello World
 weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 This is my first post of me redoing (yes redoing, I already done one portfolio with Astro as a passion project). <br>

@@ -1,6 +1,6 @@
 ---
-title: Example Category
-description: A description of this category
+title: Changelog Website
+description: To keep track of what I've done so far
 image:
 
 # Badge style
