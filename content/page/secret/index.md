@@ -22,5 +22,5 @@ links:
 comments: false
 ---
 
-Wow so secret, you find a secret place GG
+Wow so secret, you found a secret place GG ! <br>
 Here some things outside  of game making
